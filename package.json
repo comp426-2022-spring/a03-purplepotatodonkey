@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "api for coin flips",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port=5555"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a03-purplepotatodonkey.git"
+  },
+  "author": "Joseph Wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-purplepotatodonkey/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-purplepotatodonkey#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "minimist": "^1.2.6"
+  }
+}
