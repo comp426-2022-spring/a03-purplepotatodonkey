@@ -17,8 +17,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/app', (req, res) => {
-    res.status(200).send("OK")
-    res.type("text/plain")
+// Respond with status 200
+    res.statusCode = 200;
+// Respond with status message "OK"
+    res.statusMessage = 'OK';
+    res.writeHead( res.statusCode, { 'Content-Type' : 'text/plain' });
+    res.end(res.statusCode+ ' ' +res.statusMessage)
 })
 
 app.get('/app/flip', (req, res) => {
@@ -31,13 +35,13 @@ app.get('/app/flips/:number', (req, res) => {
                            "summary" : countFlips(flips)})
 })
 
-app.get('/app/flip/call/:call', (req, res) => {
-    var flip = flipACoin(req.params.call)
+app.get('/app/flip/call/:something', (req, res) => {
+    var flip = flipACoin(req.params.something)
     res.status(200).json(flip)
 })
 
 app.use(function(req, res) {
-    res.status(404).send("Endpoint does not exist")
+    res.status(404).send("404 NOT FOUND")
     res.type("text/plain")
 })
 
